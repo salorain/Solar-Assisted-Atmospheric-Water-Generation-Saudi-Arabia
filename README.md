@@ -6,11 +6,7 @@ device driven by real meteorological records, optimizes airflow and energy dispa
 that hourly climate, trains a machine-learning surrogate of the optimal control surface, and
 upscales the result to a national station network.
 
-The headline result is a **control-strategy** finding rather than a regional one: for a
-power-constrained AWG, the binding design variable is how a fixed cooling budget is allocated
-in time and across air mass — not hardware capacity. Reallocating identical stored energy
-moves annual yield substantially at zero hardware cost, and the optimizer selects a median
-airflow well below the device nameplate.
+
 
 > **Manuscript:** *Solar-Assisted Atmospheric Water Generation: Climate-Driven Simulation,
 > Optimization, and Feasibility Assessment for Dammam and 33 Stations Across Saudi Arabia*
