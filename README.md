@@ -118,37 +118,6 @@ All file paths are relative to the notebook's working directory. A few cells in 
 still reference Google Colab Drive paths (`/content/drive/MyDrive/QEC_research/...`) from when
 that notebook was run in Colab; those cells will not run locally without editing the path.
 
----
-
-## Caveats and known issues
-
-**`awg_revision.py` is not included.** Part 3 opens with `from awg_revision import *` and Part 6
-imports `optimize_hour` and `ComponentModel` from it. That module holds the shared psychrometric,
-component-energy and dispatch functions used by the revision analyses, and it lives in the
-companion `awg-control-strategy` package rather than in this repository. Part 6 falls back to
-inline placeholder implementations and prints a warning when the import fails; **Part 3 will
-raise an `ImportError` without it.** Place `awg_revision.py` beside the notebook, or install the
-companion package, before running Part 3.
-
-**Appendix A contains superseded results.** An audit of the original notebook found several
-places where it disagrees with the published analysis:
-
-- The solar-limited yield exists in two incompatible versions in the original cells; only the
-  later one is in the paper.
-- One dispatch cell returns the optimized value for both the naive and optimized branches.
-- Two different minimum-outlet-temperature constants (0 °C and 2 °C) coexist; the paper uses 0 °C.
-- Atmospheric pressure is fixed at 101,325 Pa for every station, which biases the humidity ratio
-  at high-elevation sites (Abha, ~2,200 m, is the worst case). This is corrected in the
-  revision analyses, not in Appendix A.
-- The preliminary airflow model in the original notebook applies a cooling-efficiency penalty
-  centred on 50 m³/h and then reports an optimum at 50 m³/h. That result was withdrawn from the
-  manuscript as circular, and the corresponding figures were removed.
-
-Treat Appendix A as a provenance record, not as runnable analysis.
-
-**Execution counts have been renumbered** sequentially across the merged notebook so the
-combined sequence reads coherently. Cell IDs were regenerated and Colab-specific output metadata
-was dropped for `nbformat` validity; cell sources and outputs are otherwise unmodified.
 
 ---
 
