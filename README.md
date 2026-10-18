@@ -8,10 +8,19 @@ upscales the result to a national station network.
 
 
 
-> **Manuscript:** *Solar-Assisted Atmospheric Water Generation: Climate-Driven Simulation,
-> Optimization, and Feasibility Assessment for Dammam and 33 Stations Across Saudi Arabia*
-> — DWT-D-26-01134, under revision at *Desalination and Water Treatment*.
-> Author: Saleh A. Aloraini, Qassim University.
+[![DOI](https://img.shields.io/badge/DOI-10.1016%2Fj.dwt.2026.101957-blue)](https://doi.org/10.1016/j.dwt.2026.101957)
+
+> **Published article:** Aloraini, S. A. (2026). *Control strategy, not capacity, governs
+> solar-powered atmospheric water generation: Hour-resolved optimization for Dammam and a
+> 33-station Saudi Arabia network.* **Desalination and Water Treatment**, 328, 101957.
+> <https://doi.org/10.1016/j.dwt.2026.101957>
+>
+> Open access under CC BY 4.0. Received 31 July 2026; revised 10 September 2026; accepted
+> 24 September 2026; available online 25 September 2026.
+> Author: Saleh A. Aloraini, Department of Civil Engineering, Qassim University.
+
+This repository is the code and data-availability record cited in the article's Data
+Availability statement.
 
 ---
 
@@ -21,6 +30,7 @@ upscales the result to a national station network.
 |---|---|
 | `AWG_Saudi_Arabia_Full_Analysis.ipynb` | All seven working notebooks merged into one, 230 cells, outputs preserved as executed |
 | `README.md` | This file |
+| `CITATION.cff` | Citation metadata for the published article (drives GitHub's "Cite this repository") |
 
 The notebook is a **merge of seven separate notebooks** written over the course of the study,
 concatenated in the order the analysis was carried out. Each part opens with a divider cell
@@ -39,7 +49,7 @@ readable without re-running anything.
 | Part | Originally | Cells | What it does |
 |---|---|---|---|
 | **1 — Data acquisition** | `Meteostat_Saudi_Downloader_2000_2025.ipynb` | 2 | Bulk download of hourly Meteostat records for the Saudi station network, 2000–2025 |
-| **2 — Manuscript analysis** | `01_manuscript_analysis_CLEAN.ipynb` | 28 | The curated pipeline behind the paper: idealized parametric model, hour-resolved psychrometric optimization for Dammam 2024, optimal vs. fixed airflow, solar/battery dispatch, battery capacity sweep, joint T–RH–airflow behaviour, ML surrogate, national upscaling and maps. **Figures 1, 4–14; Tables 1–2** |
+| **2 — Manuscript analysis** | `01_manuscript_analysis_CLEAN.ipynb` | 28 | The curated pipeline behind the published article: idealized parametric model, hour-resolved psychrometric optimization for Dammam 2024, optimal vs. fixed airflow, solar/battery dispatch, battery capacity sweep, joint T–RH–airflow behaviour, ML surrogate, national upscaling and maps. **Figures 1, 4–14; Tables 1–2** |
 | **3 — Revision analyses** | `02_revision_analyses.ipynb` | 36 | Analyses added in response to peer review: component-level energy model with COP, validation against published AWG performance, dispatch optimality vs. an LP benchmark, closed-loop battery energy audit, parameter sensitivity and Sobol indices, uncertainty quantification, multi-year ERA5, surrogate cross-validation with climatic holdout, station pipeline and kriging, techno-economic assessment |
 | **4 — Revision round 1** | `AWH_Revision.ipynb` | 10 | Kriging variance maps for spatial-interpolation uncertainty; battery-capacity asymptote |
 | **5 — Revision round 2** | `AWG_Revison2.ipynb` | 16 | Surrogate performance by temperature–humidity regime, definition and QC of the 33-station retained network, cubic vs. kriging comparison |
@@ -123,18 +133,27 @@ that notebook was run in Colab; those cells will not run locally without editing
 
 ## Citation
 
-If you use this code, please cite the manuscript. A machine-readable `CITATION.cff` will be added
-once the DOI is minted.
+If you use this code, please cite the published article. A machine-readable
+[`CITATION.cff`](CITATION.cff) is included, so GitHub's "Cite this repository" button gives
+the same reference.
+
+> Aloraini, S. A. (2026). Control strategy, not capacity, governs solar-powered atmospheric
+> water generation: Hour-resolved optimization for Dammam and a 33-station Saudi Arabia
+> network. *Desalination and Water Treatment*, 328, 101957.
+> https://doi.org/10.1016/j.dwt.2026.101957
 
 ```bibtex
-@article{Aloraini_AWG_Saudi,
+@article{Aloraini2026AWG,
   author  = {Aloraini, Saleh A.},
-  title   = {Solar-Assisted Atmospheric Water Generation: Climate-Driven Simulation,
-             Optimization, and Feasibility Assessment for Dammam and 33 Stations
-             Across Saudi Arabia},
+  title   = {Control strategy, not capacity, governs solar-powered atmospheric water
+             generation: Hour-resolved optimization for Dammam and a 33-station
+             Saudi Arabia network},
   journal = {Desalination and Water Treatment},
-  note    = {Manuscript DWT-D-26-01134, under revision},
-  year    = {2026}
+  volume  = {328},
+  pages   = {101957},
+  year    = {2026},
+  doi     = {10.1016/j.dwt.2026.101957},
+  url     = {https://doi.org/10.1016/j.dwt.2026.101957}
 }
 ```
 
@@ -145,6 +164,7 @@ The author thanks the Deanship of Graduate Studies and Scientific Research at
 
 ## License
 
-Code in this repository is released under the MIT License. Meteorological data retrieved by
-these notebooks remains under the terms of its original providers — in particular, Meteostat
-records are CC BY-NC and must not be redistributed.
+Code in this repository is released under the MIT License. The published article is open
+access under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Meteorological data
+retrieved by these notebooks remains under the terms of its original providers — in
+particular, Meteostat records are CC BY-NC and must not be redistributed.
