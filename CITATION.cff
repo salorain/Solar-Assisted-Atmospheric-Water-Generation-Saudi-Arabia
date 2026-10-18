@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the published article below."
+title: "Solar-Assisted Atmospheric Water Generation — Saudi Arabia (analysis code)"
+authors:
+  - family-names: Aloraini
+    given-names: Saleh A.
+    affiliation: "Department of Civil Engineering, College of Engineering, Qassim University"
+repository-code: "https://github.com/salorain/Solar-Assisted-Atmospheric-Water-Generation-Saudi-Arabia"
+license: MIT
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Aloraini
+      given-names: Saleh A.
+      affiliation: "Department of Civil Engineering, College of Engineering, Qassim University"
+  title: "Control strategy, not capacity, governs solar-powered atmospheric water generation: Hour-resolved optimization for Dammam and a 33-station Saudi Arabia network"
+  journal: "Desalination and Water Treatment"
+  volume: 328
+  start: 101957
+  year: 2026
+  doi: "10.1016/j.dwt.2026.101957"
+  url: "https://doi.org/10.1016/j.dwt.2026.101957"
